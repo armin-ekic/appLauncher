@@ -8,7 +8,7 @@ class Nav():
     def __init__(self,chosenDir):
         self.chosenDir = chosenDir
 
-    def infoMessages(self, help = False, list = False):
+    def infoMessages(self, file, help = False, list = False, appList = False):
         if help:
             print("Choose a folder in the Desktop directory to look into. \n"
                   "Type \"list\" to see all the directories in the Desktop.")
@@ -20,3 +20,8 @@ class Nav():
                     continue
                 else:
                     print(directories[x])
+        if appList:
+            print("The list of applications to choose from is as follows: \n")
+            apps = os.listdir("C:\\Users\\aekic\\Desktop\\" + file)
+            for x in range(len(apps)):
+                print(apps[x])
